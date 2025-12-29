@@ -1,9 +1,9 @@
 CSS
 :root{
-  /* Brand colors sampled from your logo */
-  --ink:#12232A;        /* deep blue-teal (primary text) */
+  /* Brand-inspired palette (logo-matching) */
+  --ink:#12232A;        /* deep blue-teal / charcoal */
   --ink2:#263C45;       /* secondary deep teal */
-  --sage:#5A7D6F;       /* sage green (accent) */
+  --sage:#5A7D6F;       /* sage green accent */
   --sage-soft:#93AFA5;  /* lighter sage */
 
   /* Light theme surfaces */
@@ -19,48 +19,61 @@ CSS
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% 0%, #132036 0%, var(--bg) 55%);color:var(--text)}
+html,body{
+  margin:0;
+  padding:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background: radial-gradient(1200px 600px at 20% 0%, #FFFFFF 0%, var(--bg) 55%);
+  color:var(--text);
+}
 a{color:inherit}
+
 .container{max-width:1100px;margin:0 auto;padding:0 18px}
 
+/* Header */
 .site-header{
   position:sticky;top:0;z-index:50;
-  background:rgba(11,15,20,.72);
+  background:rgba(246,244,241,.88);
   backdrop-filter: blur(10px);
-  border-bottom:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid var(--line);
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+
 .brand{display:flex;align-items:center;gap:10px}
 .brand-mark{
   width:42px;height:42px;border-radius:14px;
   display:grid;place-items:center;
-  background:linear-gradient(135deg, rgba(45,212,191,.28), rgba(96,165,250,.22));
-  border:1px solid rgba(255,255,255,.10);
+  background:linear-gradient(135deg, rgba(90,125,111,.18), rgba(38,60,69,.10));
+  border:1px solid var(--line);
   font-weight:800; letter-spacing:.5px;
+  color: var(--ink2);
 }
 .brand-name{font-weight:800}
 .brand-sub{font-size:.9rem;color:var(--muted)}
 
 .nav{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
-.nav a{font-size:.95rem;text-decoration:none;color:rgba(238,242,246,.92)}
-.nav a:hover{color:white}
+.nav a{font-size:.95rem;text-decoration:none;color:rgba(18,35,42,.92)}
+.nav a:hover{color:var(--ink)}
 
+/* Buttons */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
   padding:12px 16px;border-radius:14px;text-decoration:none;
-  background:linear-gradient(135deg, rgba(45,212,191,.95), rgba(96,165,250,.95));
-  color:#051018;font-weight:800;border:0;
-  box-shadow: 0 10px 22px rgba(45,212,191,.15);
+  background:linear-gradient(135deg, rgba(90,125,111,1), rgba(38,60,69,1));
+  color:#ffffff;font-weight:800;border:0;
+  box-shadow: 0 10px 22px rgba(18,35,42,.12);
 }
-.btn:hover{filter:brightness(1.04)}
+.btn:hover{filter:brightness(1.03)}
 .btn-ghost{
-  background:transparent;color:var(--text);
-  border:1px solid rgba(255,255,255,.14);
+  background:transparent;
+  color:var(--ink2);
+  border:1px solid var(--line);
   box-shadow:none;
 }
 .btn-small{padding:10px 12px;border-radius:12px;font-size:.92rem}
 .btn-full{width:100%}
 
+/* Hero */
 .hero{padding:46px 0 10px}
 .hero-grid{
   display:grid;
@@ -69,22 +82,23 @@ a{color:inherit}
   align-items:stretch;
 }
 .hero h1{margin:0 0 12px;font-size:clamp(1.6rem, 2.6vw, 2.4rem);line-height:1.15}
-.lead{margin:0 0 18px;color:rgba(238,242,246,.88);font-size:1.05rem;line-height:1.5}
+.lead{margin:0 0 18px;color:rgba(18,35,42,.82);font-size:1.05rem;line-height:1.5}
 
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
 
 .trust-row{display:flex;gap:10px;flex-wrap:wrap}
 .trust-pill{
   padding:8px 10px;border-radius:999px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.08);
-  color:rgba(238,242,246,.88);
+  background:rgba(90,125,111,.10);
+  border:1px solid rgba(90,125,111,.20);
+  color:var(--ink2);
   font-size:.9rem;
 }
 
+/* Cards */
 .hero-card{
-  background:linear-gradient(180deg, rgba(16,24,36,.9), rgba(15,22,32,.92));
-  border:1px solid rgba(255,255,255,.08);
+  background:var(--panel);
+  border:1px solid var(--line);
   border-radius:var(--radius);
   box-shadow: var(--shadow);
   padding:18px;
@@ -95,23 +109,28 @@ a{color:inherit}
 
 .checklist{margin:10px 0 0;padding:0;list-style:none}
 .checklist li{
-  margin:10px 0;padding-left:28px;position:relative;color:rgba(238,242,246,.9)
+  margin:10px 0;padding-left:28px;position:relative;color:rgba(18,35,42,.92)
 }
 .checklist li::before{
   content:"✓";
   position:absolute;left:0;top:0;
   width:20px;height:20px;border-radius:7px;
   display:grid;place-items:center;
-  background:rgba(45,212,191,.16);
-  border:1px solid rgba(45,212,191,.28);
-  color:rgba(45,212,191,.95);
+  background:rgba(90,125,111,.14);
+  border:1px solid rgba(90,125,111,.30);
+  color:rgba(90,125,111,1);
   font-weight:900;
 }
 
 .card-cta{margin-top:14px}
 
+/* Sections */
 .section{padding:46px 0}
-.section.alt{background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.section.alt{
+  background:var(--panel2);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
 .section-head{margin-bottom:18px}
 .section-head h2{margin:0 0 6px;font-size:1.55rem}
 .section-head p{margin:0}
@@ -122,19 +141,20 @@ a{color:inherit}
   gap:14px;
 }
 .card{
-  background:rgba(16,24,36,.75);
-  border:1px solid rgba(255,255,255,.08);
+  background:var(--panel);
+  border:1px solid var(--line);
   border-radius:var(--radius);
   padding:16px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+  box-shadow: var(--shadow);
 }
 .card h3{margin:0 0 8px}
-.card p{margin:0;color:rgba(238,242,246,.86);line-height:1.5}
+.card p{margin:0;color:rgba(18,35,42,.86);line-height:1.5}
 .card.callout{
-  background:linear-gradient(135deg, rgba(45,212,191,.12), rgba(96,165,250,.10));
-  border-color:rgba(255,255,255,.12);
+  background:linear-gradient(135deg, rgba(90,125,111,.12), rgba(38,60,69,.06));
+  border-color:rgba(90,125,111,.22);
 }
 
+/* Gallery */
 .gallery{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -143,12 +163,12 @@ a{color:inherit}
 .shot{margin:0}
 .shot-box{
   border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(16,24,36,.75);
+  border:1px solid var(--line);
+  background:var(--panel);
   height:220px;
   position:relative;
   overflow:hidden;
-  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+  box-shadow: var(--shadow);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -156,12 +176,13 @@ a{color:inherit}
 .label{
   position:absolute;left:12px;top:12px;
   padding:7px 10px;border-radius:999px;
-  background:rgba(0,0,0,.35);
-  border:1px solid rgba(255,255,255,.16);
+  background:rgba(18,35,42,.08);
+  border:1px solid rgba(18,35,42,.12);
   font-size:.9rem;
+  color: var(--ink2);
 }
 .placeholder{
-  color:rgba(238,242,246,.72);
+  color:rgba(18,35,42,.62);
   font-weight:700;
   text-align:center;
   padding:0 16px;
@@ -170,34 +191,42 @@ a{color:inherit}
   margin-top:16px;
   padding:14px 16px;
   border-radius:var(--radius);
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  color:rgba(238,242,246,.88);
+  background:rgba(90,125,111,.08);
+  border:1px solid rgba(90,125,111,.18);
+  color:rgba(18,35,42,.88);
 }
 
+/* About + Contact grids */
 .about-grid, .contact-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap:14px;
 }
 .about-card, .contact-card{
-  background:rgba(16,24,36,.75);
-  border:1px solid rgba(255,255,255,.08);
+  background:var(--panel);
+  border:1px solid var(--line);
   border-radius:var(--radius);
   padding:16px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+  box-shadow: var(--shadow);
 }
 .contact-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
 
+/* Footer */
 .footer{
-  border-top:1px solid rgba(255,255,255,.06);
+  border-top:1px solid var(--line);
   padding:20px 0;
-  background:rgba(0,0,0,.2);
+  background:rgba(18,35,42,.03);
 }
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-code{background:rgba(255,255,255,.08);padding:2px 6px;border-radius:8px;border:1px solid rgba(255,255,255,.10)}
+code{
+  background:rgba(18,35,42,.06);
+  padding:2px 6px;
+  border-radius:8px;
+  border:1px solid rgba(18,35,42,.10);
+}
 
+/* Responsive */
 @media (max-width: 920px){
   .hero-grid{grid-template-columns: 1fr}
   .cards{grid-template-columns: 1fr 1fr}
